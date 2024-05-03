@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer src="app.js"></script>
+    <title>Mapy!</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+</head>
+<body>
+<div class="header">
+    <div class="userphoto">
+        <img id="user-photo" src="images/user.svg" alt="user">
+        <p id="loginp">log in</p>
+    </div>
+    <div class="header__content">
+        <img src="images/logo.png" alt="logo">
+
+    </div>
+</div>
+
+<div class="modal" id="login-modal"> <div class="modal__content"> <h2>Login</h2>
+    <form id="login-form">
+        <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        </div>
+        <button id="login">Login</button>
+    </form>
+    <button class="modal__close">&times;</button> </div>
+</div>
+
+<div class="map__container">
+<div id="map">
+</div>
+</div>
+
+<div class="pin__menu">
+        <div class="pin--img">
+            <img id="place--img" src=https://placehold.co/300x200?text=Tap+to+add+image alt="img">
+        </div>
+
+        <div class="pin--info">
+            <p id="street">Street:</p>
+            <p>Description:</p>
+            <button id="like-button"><img id="like-image" src="images/like.svg" alt="like"></button>
+        </div>
+
+        <div class="pin--post">
+
+
+            <p>Comment this pin!</p>
+            <div class="pin--comment--user">
+            <img src="images/nouser.jpg" id="user-photo-comment" alt="user"><p id="userP">username</p>
+            </div>
+            <input id="pin--comment" type="text"><span><button id="pin--btn">Pin it!</button></span>
+        </div>
+
+        <div class="pin--comments" id="comments--container">
+        <p id="no--comm">No pins!</p>
+        </div>
+
+</div>
+
+<script>
+    const userPhoto = document.querySelector('.userphoto');
+    const loginModal = document.getElementById('login-modal');
+    const closeButton = document.querySelector('.modal__close');
+    const loginForm = document.getElementById('login-form');
+
+    userPhoto.addEventListener('click', () => {
+        loginModal.style.display = 'flex';
+    });
+
+    closeButton.addEventListener('click', () => {
+        loginModal.style.display = 'none';
+    });
+
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        loginModal.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

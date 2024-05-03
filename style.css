@@ -1,0 +1,286 @@
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    margin-left: 3em;
+    text-align: center;
+}
+
+.header__content img {
+    padding: 15px 0;
+    width: 7em;
+    height: auto;
+}
+
+.userphoto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2em;
+    padding-top: 1em;
+    cursor: pointer;
+}
+
+.userphoto img {
+    width: 1em;
+    height:auto;
+}
+
+.userphotoLoggedin img {
+    width: 3em;
+    border-radius: 50%;
+}
+
+.userphoto p {
+    color: white;
+    font-size: 12px;
+}
+
+.modal {
+    text-align: center;
+    display: none;
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+.modal__content {
+    border-radius: 12px;
+    background-color: white;
+    margin-bottom: 5em;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    animation: modal-appear 0.5s ease-in-out;
+
+}
+
+
+@keyframes modal-appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal__close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal button {
+    border-radius: 12px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-size: 1em;
+    padding: 1em;
+    cursor: pointer;
+
+}
+
+.modal__close:hover,
+.modal__close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal input {
+    padding: 1em;
+    font-size: 1em;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 1em 0.5em;
+    height: auto;
+
+}
+
+.map__container {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+#map {
+    flex: 1;
+    position: static;
+    height: 55em;
+    border: 1em solid #1B1212;
+}
+
+.leaflet-popup-content-wrapper {
+    opacity: 0.8;
+    text-align: center !important;
+    font-size: 1em !important;
+    margin-bottom: 1em !important;
+}
+
+.leaflet-popup-close-button {
+
+}
+
+.leaflet-popup-tip {
+    display: none;
+}
+
+.pin--comment--user {
+    display: flex;
+    gap: 1em;
+    flex-direction: row!important;
+    margin-bottom: 0.5em;
+}
+
+.pin--comment--user img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+
+.popup__markup button {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    background-color: white;
+    color: black;
+}
+
+.pin__menu--js {
+
+}
+
+.pin__menu {
+    background-color: white;
+    z-index: 9999;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+}
+
+.pin--info button {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.pin--info button:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.pin--info img {
+    width: 3em;
+    height: 3em;
+}
+
+.pin--post button {
+    font-size: 1em;
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pin--post input {
+    padding: 1em;
+    font-size: 1em;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-right: 1em;
+    height: auto;
+}
+
+.pin--comments {
+    max-height: 140px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2em;
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.comment--markup {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.comment--markup p {
+    font-size: 2em;
+}
+
+.comment--markup h1 {
+    font-size: 12px;
+}
+
+.comment--markup img {
+    margin-right: 12px;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+
+.comment--comment {
+    display: flex;
+    width: inherit;
+    font-size: 12px;
+}
